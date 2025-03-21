@@ -10,8 +10,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CoreBusiness\**" />
+    <Compile Remove="SQLServerPlugin\**" />
+    <Compile Remove="UserCase\**" />
+    <Content Remove="CoreBusiness\**" />
+    <Content Remove="SQLServerPlugin\**" />
+    <Content Remove="UserCase\**" />
+    <EmbeddedResource Remove="CoreBusiness\**" />
+    <EmbeddedResource Remove="SQLServerPlugin\**" />
+    <EmbeddedResource Remove="UserCase\**" />
+    <None Remove="CoreBusiness\**" />
+    <None Remove="SQLServerPlugin\**" />
+    <None Remove="UserCase\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.3.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.20.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="CoreBusiness\CoreBusiness.csproj" />
+    <ProjectReference Include="SQLServerPlugin\SQLServerPlugin.csproj" />
+    <ProjectReference Include="UserCase\UserCase.csproj" />
   </ItemGroup>
 
 </Project>
